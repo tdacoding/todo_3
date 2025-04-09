@@ -1,5 +1,3 @@
-import style from '../App.module.css';
-
 const TableHeader = (props) => {
 	const { table } = props;
 

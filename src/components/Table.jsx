@@ -1,11 +1,11 @@
 import TableBody from './TableBody';
 import TableHeader from './TableHeader';
 
-const Table = ({ table, todos, setEditedTodo }) => {
+const Table = ({ table, todos }) => {
 	return (
 		<table>
 			<TableHeader table={table} />
-			<TableBody todos={todos} table={table} setEditedTodo={setEditedTodo} />
+			<TableBody todos={todos} table={table} />
 		</table>
 	);
 };

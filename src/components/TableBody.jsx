@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const TableBody = ({ todos, table }) => {
 	const renderContent = (todo, column) => {
 		if (table[column].component) {
@@ -6,7 +8,13 @@ const TableBody = ({ todos, table }) => {
 				return component(todo);
 			}
 		} else {
-			return todo[column];
+			return (
+				<Link to={`task/${todo.id}`}>
+					{todo[column].length < 60
+						? todo[column]
+						: todo[column].substr(0, 57) + '...'}
+				</Link>
+			);
 		}
 	};
 	return (

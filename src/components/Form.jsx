@@ -36,7 +36,7 @@ export const Form = ({ request, isCreating, isEditing, formInputRef }) => {
 				{...rest}
 				ref={(e) => {
 					ref(e);
-					formInputRef.current = e; // you can still assign to ref
+					formInputRef.current = e;
 				}}
 			/>
 			{error && <div className={styles.error}>{error}</div>}
