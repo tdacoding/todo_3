@@ -33,17 +33,26 @@ thead {
 
 th,
 td {
-	padding: 12px;
+	padding: 0px;
 	text-align: left;
 	border-bottom: 1px solid #ddd;
 }
 
 th {
+	padding: 12px;
 	text-transform: uppercase;
 }
 
 td {
 	color: #555;
+}
+
+td a { 
+	display: block; 
+	padding: 12px;
+}
+td a:hover {
+background-color:#dfdfca62;
 }
 
 .delBtn {

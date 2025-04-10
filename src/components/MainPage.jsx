@@ -13,7 +13,7 @@ export const MainPage = () => {
 
 	const table = {
 		title: {
-			name: 'Задача',
+			name: 'Задачи',
 		},
 	};
 
