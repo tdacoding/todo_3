@@ -6,6 +6,7 @@ export const Task = () => {
 	const [todo, setTodo] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isEditing, setIsEditing] = useState(false);
+
 	const params = useParams();
 	const curId = +params.id;
 	const navigate = useNavigate();
@@ -13,7 +14,7 @@ export const Task = () => {
 	const requestDeleteTodo = () => {
 		fetch('http://localhost:3000/todos/' + todo.id, {
 			method: 'DELETE',
-		}).then(navigate(-1));
+		}).finally(navigate('/'));
 	};
 
 	const requestEditTodo = () => {
@@ -38,7 +39,7 @@ export const Task = () => {
 			})
 			.catch(() => navigate('/404'))
 			.finally(() => setIsLoading(false));
-	}, []);
+	}, [curId]);
 
 	const delHandler = () => {
 		if (confirm('Удалить задачу?')) requestDeleteTodo();
@@ -67,7 +68,7 @@ export const Task = () => {
 						setTodo({ ...todo, title: event.target.value });
 					}}
 					autoFocus
-					spellcheck="false"
+					spellCheck="false"
 				></textarea>
 			) : (
 				<div>{todo.title}</div>
